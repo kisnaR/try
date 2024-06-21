@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistical Analysis</title>
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            background-image: url("http://cdn.wallpapersafari.com/81/25/vmNLAI.jpg");
+          
+            background-position: cover;
+            /*o/verflow: hidden;*/
+            position: relative;
+        }
+        header {
+            /*background-color: #333;*/
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        canvas {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Statistical Analysis</h1>
+    </header>
+    <div class="container">
+        <h2>Data Summary</h2>
+        <p>Total Quality sleep: 05</p>
+        <p>hours: 50</p>
+        <p>Standard Deviation: 10</p>
+        
+        <h2>Graph</h2>
+        <canvas id="myChart" width="400" height="200"></canvas>
+    </div>
+
+    <script>
+        // Get the canvas element
+        var ctx = document.getElementById('myChart').getContext('2d');
+
+        // Define data for the chart
+        var data = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+            datasets: [{
+                label: 'Dataset 1',
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1,
+                data: [65, 59, 80, 81, 56, 55]
+            }]
+        };
+
+        // Define chart options
+        var options = {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        };
+
+        // Create the chart
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: options
+        });
+    </script>
+</body>
+</html>

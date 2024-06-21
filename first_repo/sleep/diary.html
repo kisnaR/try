@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Diary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            background-image: url("http://cdn.wallpapersafari.com/81/25/vmNLAI.jpg");
+          
+            background-position: cover;
+            /*o/verflow: hidden;*/
+            position: relative;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+        input[type="date"] {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My Diary</h1>
+        <form id="diaryForm">
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+            <label for="entry">Diary Entry:</label>
+            <textarea id="entry" name="entry" required></textarea>
+            <button type="submit">Save Entry</button>
+        </form>
+        <div id="entries">
+            <!-- Diary entries will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("diaryForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get form data
+            var formData = new FormData(event.target);
+
+            // Create entry element
+            var entryDiv = document.createElement("div");
+            entryDiv.classList.add("entry");
+
+            // Display entry details
+            var date = formData.get("date");
+            var entry = formData.get("entry");
+            entryDiv.innerHTML = "<strong>Date:</strong> " + date + "<br><strong>Entry:</strong><br>" + entry;
+
+            // Append entry to entries container
+            document.getElementById("entries").appendChild(entryDiv);
+
+            // Clear form fields
+            event.target.reset();
+        });
+    </script>
+</body>
+</html>

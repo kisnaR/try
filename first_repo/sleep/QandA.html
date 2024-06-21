@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire</title>
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
+<script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+
+
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-image: url("http://cdn.wallpapersafari.com/81/25/vmNLAI.jpg");
+           /* background-color: #f4f4f4;*/
+            background-position: cover;
+            /*o/verflow: hidden;*/
+            position: relative;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Questionnaire</h2>
+        <form id="questionForm">
+            <label for="q1">Question 1: Your current age:</label>
+            <input type="text" id="q1" name="q1" required>
+
+            <label for="q2">Question 2: What is your daily average sleep?</label>
+            <input type="text" id="q2" name="q2" required>
+
+            <label for="q3">Question 3: How much quality sleep do you get??(wavelenth 1-10)</label>
+            <input type="text" id="q3" name="q3" required>
+
+            <label for="q4">Question 4:Do you have any kind of sleep disorders? (Yes/No)</label>
+            <input type="text" id="q4" name="q4" required>
+
+            <label for="q5">Question 5: How often do you feel stress?</label>
+            <input type="text" id="q5" name="q5" required>
+
+            <button type="submit">Submit Answers</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("questionForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get form data
+            var formData = new FormData(event.target);
+
+            // Display answers
+            var answers = {};
+            for (var pair of formData.entries()) {
+                answers[pair[0]] = pair[1];
+            }
+            alert("Answers:\n" + JSON.stringify(answers, null, 2));
+        });
+    </script>
+    <py-script src="Q.py">
+        
+    </py-script>
+</body>
+</html>

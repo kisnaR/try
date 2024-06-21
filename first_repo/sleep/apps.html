@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sleep Tracker</title>
+  <style>
+   body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('https://wallpaperaccess.com/full/2536540.png');
+      background-size: cover;
+      background-position: top;
+      background-repeat: no-repeat;
+      overflow: hidden;
+      position: relative; /* Required for absolute positioning of images */
+    }
+    
+    header, footer {
+     /* background-color: rgba(105, 238, 229, 0.8); /* Semi-transparent background color for better readability */
+      color: #f2f8f9;
+      padding: 1rem;
+      text-align: center;
+    }
+    main {
+      padding: 1rem;
+      display: flex;
+      justify-content: left;
+      align-items: flex; /* Align items to the bottom */
+      height: calc(100vh - 2rem); /* Adjust for header and footer height */
+    }
+    .circle-container {
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+    }
+    .circle-container a {
+      margin-bottom: 1rem;
+      text-decoration: none;
+      color: #dcdce8;
+    }
+    .circle-container img {
+      border-radius: 50%;
+      border: 2px solid #fff;
+      transition: transform 0.3s ease-in-out;
+    }
+    .circle-container img:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><b>Sleep Tracker</b></h1>
+  </header>
+  <main>
+    <div class="circle-container" id="circleContainer">
+        <a href="C:/Users/Rama%20Mohanarao/OneDrive/Desktop/sleep/music.html">
+            <img src="http://sites.warnercnr.colostate.edu/kenburnham/wp-content/uploads/sites/25/2016/08/Beautiful-Music-HD-Wallpapers.jpg" height="100" width="100" alt="" id="1">
+            <label>Music</label>
+        </a>
+        <a href="file:///C:/Users/Rama%20Mohanarao/OneDrive/Desktop/sleep/reading.html">
+            <img src="http://getwallpapers.com/wallpaper/full/5/a/7/165895.jpg" height="100" width="100" alt="FB" id="2">
+            <label>Reading</label>
+        </a>
+        <a href="file:///C:/Users/Rama%20Mohanarao/OneDrive/Desktop/sleep/diary.html">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.s0bqrWlCd0LZgojglF6qaQHaE7&pid=Api&P=0&h=180" height="100" width="100" alt="Snapchat" id="3">
+            <label>Sleep Diary</label>
+        </a>
+        <a href="file:///C:/Users/Rama%20Mohanarao/OneDrive/Desktop/sleep/analyse.html">
+            <img src="https://thumbs.dreamstime.com/z/big-data-background-business-statistics-40026735.jpg" height="100" width="100" alt="Instagram" id="4">
+            <label>Analysis</label>
+        </a>
+    </div>
+  </main>
+</body>
+</html>
